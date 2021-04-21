@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.chat-container {
+  display: flex;           
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;    
+  height: 100%;
+  width: auto;
+  background-color: rgb(26, 26, 26);
+}
+
+.chat {
+  width: calc(100% - 20vh);
+  height: calc(100% - 10vh);
+  margin: 40px;
+  margin: 5px;
+  text-align: center; 
+  background-color: rgb(218, 218, 218);
+  position: relative;
+}
+
+.input-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(85 85 85);
+}
+
+.input-bar input {
+  padding: 0;
+  padding: 0;
+  flex: 1;
+  color: black;
+  border-width: 0px;
+  border-radius: 5px;
+  margin-right: 10px;
+  text-indent: 10px;
+  font-size: 15px;
+  margin-left: 5px;
+  border-color: rgb(111, 0, 255) !important;
+}
+
+.send-button:hover {
+  background-color: #302f2f;
+}
+
+.chat-messages {
+    width: 100%;
+    height: calc(100% - 40px);
+    padding-inline-start: 0px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    background-color: #252525;
+    list-style-type: none;
+    overflow-y: scroll;
+}
+
+.chat-message {
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  font-size: 0.9em;
+}
+
+.msg-username {
+  color: rgb(41, 245, 245);
+}
+
+.msg-username:after {
+  content: ': ';
+}
+
+.msg-text {
+  margin-left: 4px;
+  color: white;
+  word-wrap: break-word;
+  display: inline;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+ul>li:nth-child(odd){
+  background-color: #454343;
+}​
+
+.msg-timeStamp {
+
+}
