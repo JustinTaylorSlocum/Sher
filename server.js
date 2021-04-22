@@ -1,13 +1,15 @@
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
-const PORT = process.env.PORT || 2999;
-const io = require('socket.io')(3001, {
+const io = require('socket.io')(server);
+const PORT = process.env.PORT || 3001;
+
+/* const io = require('socket.io')(3001, {
   cors: {
       origin: 'http://localhost:3000',
       methods: ['GET', 'POST'],
   },
-});
+}); */
 
 
 if (process.env.NODE_ENV == 'production') {
@@ -31,4 +33,6 @@ io.on("connection", socket => {
   });
 });
 
-server.listen(PORT);
+server.listen(PORT, () => {
+  console.log("Connected to port: " + PORT);
+});
