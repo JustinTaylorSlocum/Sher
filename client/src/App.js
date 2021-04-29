@@ -1,16 +1,25 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import TextChat from './Components/textChat.js'
 import './socket';
+import LoginModal from './Components/loginModal';
+import TextChat from './Components/textChat.js';
+import MediaContainer from './Components/mediaContainer';
+import { Container, Box, Grid } from '@material-ui/core';
 
 function App() {
 
   return (
+    <>
     <div className="App">
       <body>
-            <TextChat/>
+      <LoginModal/>
+        <Grid className="content">
+              <MediaContainer/>
+              <TextChat/>
+        </Grid>
       </body>
     </div>
+    </>
   );
 }
 

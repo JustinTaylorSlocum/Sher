@@ -1,12 +1,15 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  height: 100vh;
+       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; 
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(58, 58, 58);
+      overflow: hidden;
 }
 
 code {
@@ -14,81 +17,156 @@ code {
     monospace;
 }
 
-.chat-container {
-  display: flex;           
-  flex-direction: column; 
+.content {
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
-  align-items: center;    
-  height: 100%;
-  width: auto;
-  background-color: rgb(26, 26, 26);
+  align-content: center;
+  align-items: center;
+}
+
+.chat-container {
+  order: 2;
+  flex: 0 1 auto;
+  align-self: auto;
+  min-width: 0;
+  width: 600px;
+  display: flex;
+  height: 100vh;
+  min-height: auto;
+  flex-basis: 300px;
+  box-shadow: -2px -9px 5px #0c0c0c8f;
 }
 
 .chat {
-  width: calc(100% - 20vh);
-  height: calc(100% - 10vh);
-  margin: 40px;
-  margin: 5px;
+  width: 100%;
   text-align: center; 
-  background-color: rgb(218, 218, 218);
   position: relative;
+  flex: 0 1 auto;
+  align-self: auto;
+  min-width: 0;
+  display: flex;
+  min-height: auto;
+  background-color: #292929;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 }
 
-.input-bar {
-    position: absolute;
-    bottom: 0;
+.chat-tabs {
+  flex: 0 1 auto;
+  min-height: auto;
+  background-color: #292929;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.chatTab {
+    flex: 0 1 auto;
+    min-height: auto;
+    background-color: #292929;
+    justify-content: center;
     width: 100%;
-    height: 30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(85 85 85);
+    border-bottom: 1px solid black;
 }
 
-.input-bar input {
-  padding: 0;
-  padding: 0;
-  flex: 1;
-  color: black;
-  border-width: 0px;
-  border-radius: 5px;
-  margin-right: 10px;
-  text-indent: 10px;
-  font-size: 15px;
-  margin-left: 5px;
-  border-color: rgb(111, 0, 255) !important;
+.chat-messages {
+  width: 100%;
+  padding-inline-start: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  background-color: #292929;
+  list-style-type: none;
+  overflow-y: auto;
+  align-self: auto;
+  height: calc(100% - 60px - 74px);
+  position: absolute;
+}
+
+
+.chat-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  list-style-type: none;
+  background-color: #292929;
+  flex-basis: 73px;
+  border-top: 1px solid;
+}
+
+.chat-bar input {
+padding: 0;
+flex: 1;
+color: rgb(255, 255, 255);
+border-width: 0px;
+border-radius: 5px;
+text-indent: 10px;
+font-size: 15px;
+}
+
+.react-input-emoji--container {
+  border-radius: 2px !important;
+  background-color: #313131 !important;
+  color: white !important;
+}
+
+.MuiTab-labelIcon {
+  min-height: 60px !important;
+}
+
+.MuiTab-root {
+  padding: 0 !important;
+}
+
+.chat-message-text {
+  text-align: left;
+  width: 100%;
+}
+
+.ScrollbarsCustom-Content li:nth-child(odd){
+  background-color: #45434354;
 }
 
 .send-button:hover {
   background-color: #302f2f;
 }
 
-.chat-messages {
-    width: 100%;
-    height: calc(100% - 40px);
-    padding-inline-start: 0px;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    background-color: #252525;
-    list-style-type: none;
-    overflow-y: scroll;
+.react-emoji-picker--wrapper {
+  width: 356px !important;
 }
 
 .chat-message {
   display: flex;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
+  padding: 10px;
   font-size: 0.9em;
+  background-color: rgba(22, 22, 22, 0.233);
 }
 
 .msg-username {
   color: rgb(41, 245, 245);
+  display: inline;
+  vertical-align: baseline;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.375rem;
 }
 
-.msg-username:after {
-  content: ': ';
+.msg-time-stamp {
+    font-size: 0.5em;
+    color: gray;
+    font-weight: 300;
+    margin-left: 7px;
+}
+
+.is-typing-label {
+  color: white;
+  font-size: 0.9em;
+  margin-left: 20px;
+  height: 15px;
 }
 
 .msg-text {
@@ -96,7 +174,6 @@ code {
   color: white;
   word-wrap: break-word;
   display: inline;
-
   margin: 0;
   padding: 0;
   border: 0;
@@ -105,10 +182,165 @@ code {
   vertical-align: baseline;
 }
 
-ul>li:nth-child(odd){
-  background-color: #454343;
-}​
+.MuiDialog-paperFullWidth {
+  background-color: #8e2626 !important;
+  color: white !important;
+}
 
-.msg-timeStamp {
+.MuiDialogContent-dividers {
+  border-top: 1px solid rgb(255 255 255 / 28%) !important;
+  border-bottom: 1px solid rgb(255 255 255 / 28%) !important;
+}
 
+.MuiInputLabel-animated {
+  color: white !important;
+}
+
+.MuiInput-underline:before {
+  border-bottom: 1px solid rgb(255 255 255 / 41%) !important;
+}
+
+.MuiButton-textPrimary {
+  color: #efefef !important;
+}
+
+.MuiInputBase-root {
+  color: rgb(253 253 253 / 87%) !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.user-list {
+  list-style-type: none;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding-inline-start: 0px;
+}
+
+.user-list-item {
+  padding: 8px;
+  font-size: 1.2em;
+  color: white;
+  border-bottom: 1px solid black;
+}
+
+.MuiTab-root {
+  min-width: 150px !important;
+}
+
+/*-------------Media Container Style---------------*/
+
+.media-container {
+  order: 1;
+  flex: 0 1 auto;
+  align-self: auto;
+  min-width: 0;
+  flex-direction: column;
+  place-self: flex-start;
+  display: flex;
+  min-height: auto;
+  flex-basis: calc(100% - 300px);
+  height: 100vh;
+  background-color: rgb(31, 31, 31);
+}
+
+.media-nav {
+    order: 1;
+    flex: 0 1 auto;
+    align-self: auto;
+    min-width: 0;
+    display: flex;
+    min-height: auto;
+    background-color: #292929;
+    flex-basis: 60px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-display {
+    order: 2;
+    flex: 1 1 auto;
+}
+
+.media-display > * {
+    width: 100%;
+    height: calc(100%);
+}
+
+.media-search-bar {
+  order: 1;
+  flex: 0 1 auto;
+  min-width: 0;
+  display: flex;
+}
+
+.media-search-button {
+  background-color: #383838 !important;
+  border-radius: 0px !important;
+  padding: 5px 16px !important;
+  margin-left: 1px !important;
+}
+
+.media-search-input {
+  width: 70vh;
+  height: 30px;
+  background-color: #111111;
+  border: 1px solid #484848;
+  color: white;
+  max-width: 400px;
+}
+
+.MuiDialog-paperFullScreen {
+  background-color: #1f1f1f !important;
+  color: white !important;
+}
+
+.MuiAppBar-colorPrimary {
+  background-color: #962f63 !important;
+}
+
+.MuiTypography-colorTextSecondary {
+  color: rgb(255 255 255 / 54%) !important;
+}
+
+.MuiButton-outlinedPrimary {
+  color: #000000 !important;
+    border: 1px solid rgb(142 142 142 / 50%) !important;
+}
+
+.MuiButton-outlined {
+  padding: 4px 0px !important;
+}
+
+.MuiListItemAvatar-root {
+  margin-right: 20px;
+}
+/*---------Mobile Styling---------*/
+@media only screen and (max-width: 800px) {
+  .content {
+    flex-flow: column nowrap;
+  }
+  .chat-container {
+    box-shadow: none;
+    width: 100%;
+    flex-basis: auto;
+    border-top: 1px solid black;
+  }
+  .media-container {
+    width: 100%;
+    flex-basis: auto;
+  }
+  .chat {
+    /* background-color: rgb(15, 15, 15); */
+  }
+  .media-search-input {
+    width: auto;
+  }
+  body {
+    overflow: auto;
+  }
 }
