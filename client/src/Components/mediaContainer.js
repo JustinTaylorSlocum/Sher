@@ -12,11 +12,11 @@ function MediaContainer() {
 
     const handleChange = e => {
         setSearchQuery(e.target.value);
-        console.log(searchQuery);
     }
 
-    const selectVideo = (videoId) => {
-        socket.emit('newMedia', videoId);
+    const selectVideo = (videoId, title) => {
+        const media = {id: videoId, title: title};
+        socket.emit('newMedia', media);
     }
 
     const handlePlayerChange = e => {
@@ -55,11 +55,9 @@ function MediaContainer() {
         })
         socket.on('playMedia', () => {
             player.playVideo();
-            /*  target.playVideo(); */
         })
         socket.on('pauseMedia', () => {
             player.pauseVideo();
-            /* target.pauseVideo(); */
         })
       }, []);
       
@@ -71,7 +69,7 @@ function MediaContainer() {
             </div>
             <div className="media-display">
                 {(currentVideoId.length == 0 
-                ? <div style={{color:'#909090', padding:'5px'}}><ArrowUpwardIcon style={{fontSize:'15em'}}/><h2>Hey, nothing is playing! Hurry up and play something!</h2></div>
+                ? <div style={{color:'#909090'}}><ArrowUpwardIcon style={{fontSize:'15em'}}/><h2>Hey, nothing is playing! Hurry up and play something!</h2></div>
                 :<YouTube2
                 opts={opts}
                 videoId={currentVideoId}

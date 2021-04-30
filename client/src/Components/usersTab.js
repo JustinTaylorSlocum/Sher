@@ -15,11 +15,11 @@ function UsersTab() {
 
 
   return (
-      <ul onClick={console.log(roomUsers)} className="user-list">
+      <ul className="user-list">
             {roomUsers.map((user) => (
                 <ListItem style={{color:'white'}} button className="user-list-item">
                     <AccountCircleIcon style={{marginRight:'6px'}}/>
-                    <ListItemText>{user.username}</ListItemText>
+                    <ListItemText style={{color:user.color}}>{user.username}</ListItemText>
                 </ListItem>
                 ))}
       </ul>

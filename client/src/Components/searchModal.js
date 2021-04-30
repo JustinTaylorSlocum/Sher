@@ -60,7 +60,7 @@ function SearchModal(props) {
           <List>
               {searchResults.map((video) => (
                 <>
-                <ListItem button onClick={() => {props.selectVideo(video.id.videoId); handleClose()}}>
+                <ListItem button onClick={() => {props.selectVideo(video.id.videoId, video.snippet.title); handleClose()}}>
                     <ListItemAvatar>
                             <img src={video.snippet.thumbnails.default.url}></img>
                     </ListItemAvatar>

@@ -17,6 +17,23 @@ code {
     monospace;
 }
 
+#loginModal > div.MuiDialog-container.MuiDialog-scrollPaper > div{
+  display: flex !important;
+  max-height: calc(100% - 64px) !important;
+  background-color: #c31850 !important;
+  color: white !important;
+  width: 50vh !important;
+  flex-wrap: nowrap !important;
+  align-content: stretch !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+}
+
+.color-pick-button {
+  margin-top: 16px;
+  cursor: pointer;
+}
+
 .content {
   display: flex;
   flex-flow: row nowrap;
@@ -85,31 +102,55 @@ code {
 }
 
 
-.chat-bar {
+.chat-bar { 
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
   background-color: #292929;
   flex-basis: 73px;
   border-top: 1px solid;
 }
 
-.chat-bar input {
-padding: 0;
-flex: 1;
-color: rgb(255, 255, 255);
-border-width: 0px;
-border-radius: 5px;
-text-indent: 10px;
-font-size: 15px;
-}
-
-.react-input-emoji--container {
-  border-radius: 2px !important;
+.input-bar input {
+  margin: 10px;
+  border-width: 0px;
+  border-radius: 5px;
+  text-indent: 10px;
+  font-size: 1.0em;
+  height: 35px !important;
+  width: 230px;
   background-color: #313131 !important;
   color: white !important;
+  flex-basis: calc(100% - 30px);
+}
+
+.input-bar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.emoji-button {
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 1.5em !important;
+  color: rgba(255, 255, 255, 0.507);
+  cursor: pointer;
+  transition: color 1s;
+  flex-basis: 30px;
+  padding-right: 10px;
+}
+
+.emoji-button:hover {
+  /* font-size: 1.2em; */
+  color: rgba(255, 255, 255, 0.815);
 }
 
 .MuiTab-labelIcon {
@@ -142,6 +183,13 @@ font-size: 15px;
   padding: 10px;
   font-size: 0.9em;
   background-color: rgba(22, 22, 22, 0.233);
+}
+
+.room-announcement {
+    display: flex;
+    padding: 10px;
+    font-size: 0.9em;
+    background-color: #4a4345;
 }
 
 .msg-username {
@@ -212,6 +260,7 @@ font-size: 15px;
   display: none !important;
 }
 
+
 .user-list {
   list-style-type: none;
   margin-block-start: 0em;
@@ -228,6 +277,17 @@ font-size: 15px;
 
 .MuiTab-root {
   min-width: 150px !important;
+}
+
+.send-button {
+    background-color: #ca2b65;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 0.9em;
+    margin-right: 5px;
+    color: white;
+    cursor: pointer;
+    display: none !important;
 }
 
 /*-------------Media Container Style---------------*/
@@ -319,6 +379,10 @@ font-size: 15px;
 .MuiListItemAvatar-root {
   margin-right: 20px;
 }
+
+.MuiButton-outlinedPrimary {
+  border-radius: 0px !important;
+}
 /*---------Mobile Styling---------*/
 @media only screen and (max-width: 800px) {
   .content {
@@ -342,5 +406,8 @@ font-size: 15px;
   }
   body {
     overflow: auto;
+  }
+  .send-button {
+    display: block !important;
   }
 }

@@ -31,10 +31,10 @@ var currentMedia = undefined;
 
 io.on("connection", socket => {
 
-  socket.on('join', username => {
-    const user = userJoin(socket.id, username);
-    socket.emit('chat message', messageFormat("System", 'Welcome to Sher!'));
-    socket.broadcast.emit('chat message', messageFormat("System", user.username + ' joined.'));
+  socket.on('join', (username, color) => {
+    const user = userJoin(socket.id, username, color);
+    socket.emit('chat message', messageFormat("System", "red", "Welcome to Sher™!", "room-announcement"));
+    socket.broadcast.emit('chat message', messageFormat("System", "red", user.username + ' joined.', "room-announcement"));
     io.emit('roomUsers', getUsers());
     if (currentMedia !== undefined) {
       socket.emit('newMedia', currentMedia);
@@ -43,7 +43,7 @@ io.on("connection", socket => {
 
   socket.on('chat message', msg => {
     const user = getCurrentUser(socket.id);
-    io.emit('chat message', messageFormat(user.username, msg));
+    io.emit('chat message', messageFormat(user.username, user.color, msg, "user-message"));
   });
 
   socket.on('isTyping', data => {
@@ -68,6 +68,10 @@ io.on("connection", socket => {
     }
   }); 
 
+  socket.on('roomAnnouncement', text => {
+    socket.emit('roomAnnouncement', text);
+  });
+
   socket.on('playMedia', () => {
     socket.broadcast.emit('playMedia');
   });
@@ -86,14 +90,16 @@ io.on("connection", socket => {
   });
 
   socket.on('newMedia', media => {
-    currentMedia = media;
-    io.emit('newMedia', media);
+    const user = getCurrentUser(socket.id);
+    currentMedia = media.id;
+    io.emit('chat message', messageFormat("System", "red", user.username + " played " + media.title + "!", "room-announcement"));
+    io.emit('newMedia', media.id);
   });
 });
 
-server.listen(PORT, () => {
+/* server.listen(PORT, () => {
   console.log("Connected to port: " + PORT);
-});
+}); */
 
 /* const express = require('express');
 const app = express();
