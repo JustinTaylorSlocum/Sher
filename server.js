@@ -97,9 +97,9 @@ io.on("connection", socket => {
   });
 });
 
-/* server.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log("Connected to port: " + PORT);
-}); */
+});
 
 /* const express = require('express');
 const app = express();
