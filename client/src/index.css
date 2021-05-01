@@ -19,6 +19,9 @@ code {
 
 #loginModal > div.MuiDialog-container.MuiDialog-scrollPaper > div{
   display: flex !important;
+  display: -webkit-box !important;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox !important;  /* TWEENER - IE 10 */
+  display: -webkit-flex !important; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   max-height: calc(100% - 64px) !important;
   background-color: #c31850 !important;
   color: white !important;
@@ -36,6 +39,9 @@ code {
 
 .content {
   display: flex;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   flex-flow: row nowrap;
   justify-content: center;
   align-content: center;
@@ -49,6 +55,9 @@ code {
   min-width: 0;
   width: 600px;
   display: flex;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   height: 100vh;
   min-height: auto;
   flex-basis: 300px;
@@ -63,10 +72,12 @@ code {
   align-self: auto;
   min-width: 0;
   display: flex;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   min-height: auto;
   background-color: #292929;
   flex-direction: column;
-  display: flex;
   align-items: center;
 }
 
@@ -108,6 +119,9 @@ code {
   width: 100%;
   text-align: left;
   display: flex;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   flex-direction: column;
   list-style-type: none;
   background-color: #292929;
@@ -130,6 +144,9 @@ code {
 
 .input-bar {
   display: flex;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   align-items: center;
   flex-direction: row;
   align-content: center;
@@ -180,6 +197,9 @@ code {
 
 .chat-message {
   display: flex;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   padding: 10px;
   font-size: 0.9em;
   background-color: rgba(22, 22, 22, 0.233);
@@ -187,6 +207,9 @@ code {
 
 .room-announcement {
     display: flex;
+    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     padding: 10px;
     font-size: 0.9em;
     background-color: #4a4345;
@@ -300,6 +323,9 @@ code {
   flex-direction: column;
   place-self: flex-start;
   display: flex;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   min-height: auto;
   flex-basis: calc(100% - 300px);
   height: 100vh;
@@ -312,11 +338,13 @@ code {
     align-self: auto;
     min-width: 0;
     display: flex;
+    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     min-height: auto;
     background-color: #292929;
     flex-basis: 60px;
     flex-direction: row;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -336,6 +364,9 @@ code {
   flex: 0 1 auto;
   min-width: 0;
   display: flex;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
 }
 
 .media-search-button {
